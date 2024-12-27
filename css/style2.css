@@ -1,0 +1,108 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.95em;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    color: #444;
+}
+
+li {
+    margin-top: 20px;
+}
+
+img {
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+    transition: border-radius 0.3s ease; /* Smooth transition for border-radius changes */
+}
+
+.label {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+}
+
+/* Base Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 1rem;
+}
+
+/* Media Query 1: Triggered at 772px */
+@media (min-width: 772px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    img {
+        border-radius: 50%; /* Circular images */
+    }
+
+    .grid figure:last-child {
+        grid-column: span 2; /* Last image spans both columns */
+    }
+}
+
+/* Media Query 2: Triggered at 992px */
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    img {
+        border-radius: 0; /* Square images */
+    }
+
+    .grid figure:nth-child(3n) {
+        grid-column: span 2; /* Every third image spans both columns */
+    }
+}
+
+/* Media Query 3: Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto; /* Disable smooth scrolling */
+    }
+}
+
+/* Media Query 4: Prefers Color Scheme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333;
+        color: #f9f9f9;
+    }
+
+    h1, h2 {
+        color: #fff;
+    }
+
+    img {
+        border-color: #8DECB4; /* Adjust border color for dark mode */
+    }
+
+    .label {
+        color: #8DECB4;
+    }
+}
